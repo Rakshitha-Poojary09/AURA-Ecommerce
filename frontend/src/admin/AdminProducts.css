@@ -1,0 +1,955 @@
+/* ==========================================================================
+   AURA ADMIN PRODUCTS PAGE & ADD PRODUCT FORM STYLES
+   Matches the luxury aesthetic, color palette, and layout of AURA
+   ========================================================================== */
+
+.admin-products-page {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1. Page Header & Breadcrumbs
+   -------------------------------------------------------------------------- */
+.products-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-bottom: 8px;
+}
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.breadcrumb-separator {
+  color: var(--color-border);
+}
+
+.breadcrumb-current {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.products-main-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  color: var(--color-text-main);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.products-main-subtitle {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+.add-product-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  padding: 11px 22px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.add-product-toggle-btn.active {
+  background-color: #2b3929;
+}
+
+/* --------------------------------------------------------------------------
+   2. Add Product Form Card
+   -------------------------------------------------------------------------- */
+.add-product-form-card {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  position: relative;
+  animation: slideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+.form-card-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
+  background-color: rgba(56, 73, 53, 0.08);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+}
+
+.form-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: 6px;
+}
+
+.form-card-subtitle {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.form-close-btn {
+  background: none;
+  border: 1px solid var(--color-border);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.form-close-btn:hover {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-main);
+  border-color: var(--color-primary);
+}
+
+/* Form Alert Banner */
+.form-feedback-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  animation: fadeIn 0.25s ease;
+}
+
+.form-feedback-alert.success {
+  background-color: #f1f8ee;
+  border: 1px solid #b7deb1;
+  color: #255d1e;
+}
+
+.form-feedback-alert.error {
+  background-color: #fdf2f2;
+  border: 1px solid #f8b4b4;
+  color: #9b1c1c;
+}
+
+.feedback-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.feedback-content {
+  flex: 1;
+}
+
+.feedback-content strong {
+  display: block;
+  font-size: 0.92rem;
+  margin-bottom: 3px;
+}
+
+.feedback-content p {
+  font-size: 0.86rem;
+  color: inherit;
+  margin: 0;
+}
+
+.feedback-dismiss-btn {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.6;
+  padding: 0 4px;
+  transition: opacity 0.2s;
+}
+
+.feedback-dismiss-btn:hover {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   3. Form Layout & Field Styles
+   -------------------------------------------------------------------------- */
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-subgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 520px) {
+  .form-subgrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.form-label {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  letter-spacing: 0.01em;
+}
+
+.required-star {
+  color: #c53030;
+  margin-left: 2px;
+}
+
+.label-with-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.text-action-link {
+  background: none;
+  border: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+}
+
+.text-action-link:hover {
+  color: var(--color-primary-hover);
+}
+
+.action-divider {
+  color: var(--color-border);
+  font-size: 0.75rem;
+}
+
+.size-quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Form Inputs, Selects, Textareas */
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--color-text-main);
+  background-color: #faf9f6;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  background-color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(56, 73, 53, 0.12);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23384935' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* Currency Prefix */
+.input-with-prefix {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-currency-prefix {
+  position: absolute;
+  left: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.form-input.has-prefix {
+  padding-left: 28px;
+}
+
+/* Validation Error State */
+.form-group.has-error .form-input,
+.form-group.has-error .form-select,
+.form-group.has-error .form-textarea {
+  border-color: #e53e3e;
+  background-color: #fffaf9;
+}
+
+.form-group.has-error .form-input:focus,
+.form-group.has-error .form-select:focus,
+.form-group.has-error .form-textarea:focus {
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.15);
+}
+
+.field-error-message {
+  font-size: 0.78rem;
+  color: #c53030;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.field-error-message::before {
+  content: '⚠️';
+  font-size: 0.75rem;
+}
+
+.field-hint {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+}
+
+.field-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.char-count {
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  font-family: monospace;
+}
+
+/* --------------------------------------------------------------------------
+   4. Image Preview Container
+   -------------------------------------------------------------------------- */
+.image-preview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.preview-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.image-preview-wrapper {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background-color: #f7f5f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.preview-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: #fffaf0;
+  color: #b7791f;
+  font-size: 0.84rem;
+  text-align: center;
+}
+
+.preview-empty-state {
+  width: 100%;
+  height: 180px;
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: #faf9f6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  text-align: center;
+  padding: 16px;
+}
+
+.preview-empty-state svg {
+  color: #b0baad;
+}
+
+/* --------------------------------------------------------------------------
+   5. Available Sizes Pills Grid
+   -------------------------------------------------------------------------- */
+.sizes-pill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 4px 0;
+}
+
+.size-toggle-pill {
+  min-width: 48px;
+  height: 42px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: #faf9f6;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.size-toggle-pill:hover {
+  background-color: #ffffff;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.size-toggle-pill.selected {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(56, 73, 53, 0.25);
+}
+
+.size-check-icon {
+  font-size: 0.8rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Form Footer Actions
+   -------------------------------------------------------------------------- */
+.form-actions-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 24px;
+  margin-top: 8px;
+}
+
+.form-cancel-btn {
+  font-size: 0.9rem;
+  padding: 10px 22px;
+  cursor: pointer;
+}
+
+.form-submit-btn {
+  font-size: 0.9rem;
+  padding: 11px 26px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-submit-btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.spinner-icon {
+  animation: auraSpin 0.8s linear infinite;
+}
+
+@keyframes auraSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 520px) {
+  .add-product-form-card {
+    padding: 20px 16px;
+  }
+
+  .form-actions-footer {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .form-actions-footer button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. Products Catalog Table Section
+   -------------------------------------------------------------------------- */
+.catalog-section {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.catalog-toolbar {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--color-border-light);
+  flex-wrap: wrap;
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.catalog-heading {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.catalog-counter-pill {
+  font-size: 0.74rem;
+  font-weight: 700;
+  background-color: #f0eee9;
+  color: var(--color-primary);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.category-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #f7f5f0;
+  padding: 4px;
+  border-radius: var(--radius-full);
+}
+
+.category-filter-btn {
+  border: none;
+  background: none;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.category-filter-btn.active {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.catalog-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 240px;
+}
+
+@media (max-width: 600px) {
+  .catalog-search-box {
+    width: 100%;
+  }
+
+  .category-filter-group {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+.catalog-search-box svg {
+  position: absolute;
+  left: 12px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.catalog-search-input {
+  width: 100%;
+  font-size: 0.84rem;
+  padding: 8px 32px 8px 36px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  outline: none;
+  background-color: #faf9f6;
+  transition: all var(--transition-fast);
+}
+
+.catalog-search-input:focus {
+  background-color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(56, 73, 53, 0.1);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+/* Table Styles */
+.catalog-table-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.catalog-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.catalog-table thead {
+  background-color: #fbf9f6;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.catalog-table th {
+  padding: 14px 20px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #637060;
+  white-space: nowrap;
+}
+
+.catalog-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border-light);
+  font-size: 0.88rem;
+  color: var(--color-text-main);
+  vertical-align: middle;
+}
+
+.catalog-table tbody tr:hover {
+  background-color: #faf8f5;
+}
+
+.product-info-cell {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 220px;
+}
+
+.product-table-thumb {
+  width: 44px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+  flex-shrink: 0;
+}
+
+.product-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-table-name {
+  font-weight: 600;
+  color: var(--color-text-main);
+  line-height: 1.3;
+}
+
+.product-table-sub {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-family: monospace;
+}
+
+.category-pill {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: #edf2eb;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.product-price-cell strong {
+  display: block;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.product-table-original-price {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  text-decoration: line-through;
+}
+
+.table-sizes-row {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.table-size-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background-color: #f5f2ed;
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-muted);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.stock-badge {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.stock-badge.in-stock {
+  background-color: #eaf6ea;
+  color: #2e7d32;
+}
+
+.stock-badge.low-stock {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.table-action-btn {
+  background: none;
+  border: 1px solid var(--color-border);
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.table-action-btn:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.empty-catalog-cell {
+  text-align: center;
+  padding: 48px 20px !important;
+}
+
+.empty-catalog-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-text-muted);
+}
+
+.btn-sm {
+  padding: 6px 16px;
+  font-size: 0.8rem;
+}
+
+/* Table Actions Group (Edit & Delete) */
+.table-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.table-action-btn.delete-btn {
+  color: #c53030;
+  border-color: #f2c2c2;
+  background-color: #fffaf9;
+}
+
+.table-action-btn.delete-btn:hover {
+  background-color: #c53030;
+  border-color: #c53030;
+  color: #ffffff;
+}
+
+.table-action-btn.delete-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Catalog Feedback Alert (for deletion and catalog notifications) */
+.catalog-feedback-alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  margin: 16px 24px 0;
+  animation: fadeIn 0.25s ease;
+  font-size: 0.88rem;
+}
+
+.catalog-feedback-alert.success {
+  background-color: #f1f8ee;
+  border: 1px solid #b7deb1;
+  color: #255d1e;
+}
+
+.catalog-feedback-alert.error {
+  background-color: #fdf2f2;
+  border: 1px solid #f8b4b4;
+  color: #9b1c1c;
+}
+
+.catalog-feedback-alert p {
+  margin: 0;
+  flex: 1;
+  color: inherit;
+  font-weight: 500;
+}
+
+.catalog-feedback-icon {
+  font-size: 1rem;
+}

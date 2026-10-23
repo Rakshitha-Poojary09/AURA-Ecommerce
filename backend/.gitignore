@@ -1,0 +1,64 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Environment variables & local secrets
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data & process IDs
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for uploaded media (keep .gitkeep if present)
+uploads/
+!uploads/.gitkeep
+
+# Coverage directory used by tools like istanbul or nyc
+coverage/
+.nyc_output/
+
+# Cache and temporary folders
+.cache/
+tmp/
+temp/
+.temp/
+
+# IDE / Editor settings
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swo
+*.swp
+
+# Operating System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini

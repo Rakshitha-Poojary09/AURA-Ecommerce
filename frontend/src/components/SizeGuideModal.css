@@ -1,0 +1,637 @@
+/* =========================================================================
+   AURA LUXURY ATELIER SIZE GUIDE MODAL STYLES
+   ========================================================================= */
+
+.size-guide-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 20, 15, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 10000;
+  animation: fadeInSizeGuideBackdrop 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInSizeGuideBackdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.size-guide-modal-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e7e2d8;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.22), 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 1040px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: scaleUpSizeGuideModal 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scaleUpSizeGuideModal {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 1. Header */
+.size-guide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid #f0ece3;
+  background: #fdfcfb;
+}
+
+.size-guide-eyebrow {
+  display: block;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: #c28e5d;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.size-guide-title {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #1c1c1c;
+  line-height: 1.25;
+}
+
+.size-guide-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.size-guide-close-btn {
+  background: #f4efe6;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #4a443c;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.size-guide-close-btn:hover {
+  background: #384935;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+/* 2. Controls & Selectors Bar */
+.size-guide-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 28px;
+  background: #fbfaf8;
+  border-bottom: 1px solid #f0ece3;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Gender Tab Switcher */
+.gender-group {
+  background: #ede8df;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.selector-tab-btn {
+  padding: 7px 16px;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: #554f45;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.selector-tab-btn.active {
+  background: #384935;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(56, 73, 53, 0.25);
+}
+
+/* Garment Pill Switcher */
+.garment-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.selector-pill-btn {
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: 1px solid #e0d9cd;
+  background: #ffffff;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.selector-pill-btn:hover {
+  border-color: #384935;
+  color: #384935;
+}
+
+.selector-pill-btn.active {
+  background: #384935;
+  border-color: #384935;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(56, 73, 53, 0.2);
+}
+
+/* Unit Toggle Switch */
+.unit-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.unit-toggle-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #78716c;
+  letter-spacing: 0.05em;
+}
+
+.unit-switch-pill {
+  display: flex;
+  background: #ede8df;
+  padding: 3px;
+  border-radius: 8px;
+}
+
+.unit-switch-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: #554f45;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.unit-switch-btn.active {
+  background: #ffffff;
+  color: #384935;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. Modal Body Layout: Two-Column (Left: Visual; Right: Table & Notes) */
+.size-guide-body-layout {
+  display: grid;
+  grid-template-columns: 390px 1fr;
+  gap: 24px;
+  padding: 24px 28px;
+  overflow-y: auto;
+  max-height: calc(90vh - 170px);
+}
+
+/* Left Column: Visual & Where to Measure */
+.size-guide-visual-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.illustration-card-container {
+  background: #ffffff;
+  border: 1px solid #e7e2d8;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.size-guide-illustration-wrapper {
+  width: 100%;
+  max-width: 360px;
+}
+
+.garment-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Where to Measure Section */
+.how-to-measure-section {
+  background: #faf9f6;
+  border: 1px solid #ede7df;
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.measure-section-title {
+  margin: 0 0 12px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1c1c1c;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.measure-points-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.measure-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.point-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #384935;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.point-text {
+  color: #4b5563;
+}
+
+.point-name {
+  color: #1c1c1c;
+}
+
+/* Right Column: Measurement Table & Notes */
+.size-guide-table-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.table-header-block {
+  border-bottom: 1px solid #f0ece3;
+  padding-bottom: 12px;
+}
+
+.table-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.garment-chart-heading {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+.unit-indicator-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #384935;
+  background: #eef3ed;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #d4e2d2;
+}
+
+.garment-fit-description {
+  margin: 6px 0 0;
+  font-size: 0.8125rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* Responsive Table */
+.chart-table-responsive-wrapper {
+  overflow-x: auto;
+  border: 1px solid #e7e2d8;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.aura-size-chart-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.aura-size-chart-table thead th {
+  background: #faf8f5;
+  color: #384935;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e7e2d8;
+  white-space: nowrap;
+}
+
+.aura-size-chart-table tbody tr {
+  border-bottom: 1px solid #f4efe6;
+  transition: background 0.12s ease;
+}
+
+.aura-size-chart-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.aura-size-chart-table tbody tr:hover {
+  background: #fbf9f6;
+}
+
+.aura-size-chart-table tbody tr:nth-child(even) {
+  background: #fdfdfd;
+}
+
+.aura-size-chart-table tbody td {
+  padding: 12px 16px;
+  color: #2d3748;
+}
+
+.size-pill-cell {
+  width: 70px;
+}
+
+.size-label-token {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  padding: 4px 8px;
+  background: #ede8df;
+  color: #1c1c1c;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.measure-val-cell {
+  font-weight: 500;
+  color: #1f2937;
+  white-space: nowrap;
+}
+
+/* Measurement Guidance Card */
+.size-guide-guidance-card {
+  background: #faf9f6;
+  border: 1px solid #ede7df;
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+.guidance-callout-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #1c1c1c;
+  margin-bottom: 6px;
+}
+
+.callout-icon {
+  font-size: 1.1rem;
+}
+
+.guidance-body-text {
+  margin: 0 0 10px;
+  font-size: 0.8125rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.guidance-tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tip-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.775rem;
+  color: #6b7280;
+  line-height: 1.45;
+}
+
+.tip-bullet {
+  color: #c28e5d;
+  font-weight: bold;
+}
+
+/* Provisional Notice Banner */
+.provisional-notice-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #fffdfa;
+  border: 1px dashed #d6b88d;
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.notice-icon-box {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.notice-text-content strong {
+  display: block;
+  font-size: 0.8125rem;
+  color: #8c5e31;
+  margin-bottom: 4px;
+}
+
+.notice-text-content p {
+  margin: 0;
+  font-size: 0.775rem;
+  color: #6b7280;
+  line-height: 1.45;
+}
+
+/* 4. Footer */
+.size-guide-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  background: #fbfaf8;
+  border-top: 1px solid #f0ece3;
+}
+
+.footer-left-info {
+  font-size: 0.75rem;
+  color: #78716c;
+}
+
+.footer-close-btn {
+  padding: 9px 22px;
+  background: #384935;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.footer-close-btn:hover {
+  background: #273425;
+}
+
+/* =========================================================================
+   RESPONSIVE LAYOUT (Mobile & Tablet)
+   ========================================================================= */
+
+@media (max-width: 880px) {
+  .size-guide-modal-card {
+    max-height: 94vh;
+    border-radius: 12px;
+  }
+
+  .size-guide-body-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 18px 20px;
+  }
+
+  .illustration-card-container {
+    max-width: 100%;
+  }
+
+  .size-guide-header {
+    padding: 18px 20px 14px;
+  }
+
+  .size-guide-controls-bar {
+    padding: 12px 20px;
+  }
+
+  .size-guide-footer {
+    padding: 14px 20px;
+    flex-direction: column-reverse;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .footer-close-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .size-guide-title {
+    font-size: 1.35rem;
+  }
+
+  .control-group.garment-group {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .selector-pill-btn {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  .unit-toggle-wrapper {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 4px;
+  }
+
+  .aura-size-chart-table thead th,
+  .aura-size-chart-table tbody td {
+    padding: 10px 12px;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .size-guide-modal-backdrop {
+    padding: 8px;
+  }
+
+  .size-guide-modal-card {
+    max-height: 96vh;
+  }
+
+  .size-guide-header {
+    padding: 14px 12px 10px;
+  }
+
+  .size-guide-controls-bar {
+    padding: 10px 12px;
+  }
+
+  .size-guide-body-layout {
+    padding: 14px 12px;
+  }
+}
+

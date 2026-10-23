@@ -1,0 +1,158 @@
+@import './RegisterPage.css';
+
+/* ==========================================================================
+   AURA EMAIL VERIFICATION STYLING
+   ========================================================================== */
+
+.verify-email-page .auth-card {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.verify-state-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px 0 20px 0;
+}
+
+/* Spinner for Loading State */
+.verify-spinner-wrap {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.verify-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(56, 73, 53, 0.15);
+  border-top-color: var(--color-primary, #384935);
+  border-radius: 50%;
+  animation: auraSpin 0.9s linear infinite;
+}
+
+@keyframes auraSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Icons for Different States */
+.verify-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  animation: auraScaleIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes auraScaleIn {
+  from {
+    transform: scale(0.75);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.verify-icon-success {
+  background: rgba(56, 73, 53, 0.12);
+  color: #384935;
+  border: 1.5px solid rgba(56, 73, 53, 0.25);
+}
+
+.verify-icon-info {
+  background: rgba(40, 116, 166, 0.1);
+  color: #1f618d;
+  border: 1.5px solid rgba(40, 116, 166, 0.25);
+}
+
+.verify-icon-warning {
+  background: rgba(212, 143, 56, 0.12);
+  color: #b9770e;
+  border: 1.5px solid rgba(212, 143, 56, 0.3);
+}
+
+.verify-icon-danger {
+  background: rgba(192, 57, 43, 0.1);
+  color: #c0392b;
+  border: 1.5px solid rgba(192, 57, 43, 0.25);
+}
+
+.verify-state-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: var(--color-text-main, #1c1c1c);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.verify-state-desc {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--color-text-muted, #555555);
+  max-width: 400px;
+  margin-bottom: 24px;
+}
+
+.verify-email-badge {
+  background: #f4ede3;
+  color: #384935;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 28px;
+  border: 1px solid rgba(56, 73, 53, 0.15);
+  word-break: break-all;
+}
+
+.verify-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.verify-resend-form {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.verify-success-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background-color: rgba(56, 73, 53, 0.08);
+  border: 1px solid rgba(56, 73, 53, 0.2);
+  border-radius: 4px;
+  color: #384935;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.verify-footer-links {
+  margin-top: 24px;
+}
+
+@media (max-width: 480px) {
+  .verify-state-title {
+    font-size: 1.6rem;
+  }
+}

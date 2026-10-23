@@ -1,0 +1,179 @@
+/* Promotional & New Arrivals Styles */
+
+.aura-promo-section {
+  padding: 56px 0 64px;
+}
+
+.promo-banner-card {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  background-color: #f6efe8;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+@media (max-width: 860px) {
+  .promo-banner-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.promo-image-side {
+  position: relative;
+  min-height: 380px;
+}
+
+.promo-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.promo-banner-card:hover .promo-banner-img {
+  transform: scale(1.04);
+}
+
+.promo-content-side {
+  padding: 48px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .promo-image-side {
+    min-height: 220px;
+    height: 240px;
+  }
+
+  .promo-content-side {
+    padding: 24px 18px;
+  }
+
+  .promo-title {
+    font-size: 1.4rem;
+  }
+
+  .promo-text {
+    font-size: 0.88rem;
+    margin-bottom: 20px;
+  }
+
+  .promo-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 360px) {
+  .promo-content-side {
+    padding: 20px 14px;
+  }
+
+  .promo-title {
+    font-size: 1.25rem;
+  }
+
+  .promo-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+.promo-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.promo-title {
+  font-family: var(--font-family-base);
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text-main);
+  margin-bottom: 6px;
+}
+
+.promo-subtitle {
+  font-family: var(--font-family-base);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.promo-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #61645e;
+  max-width: 480px;
+  margin-bottom: 28px;
+}
+
+.promo-btn {
+  padding: 13px 32px;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Perks Strip */
+.perks-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+@media (max-width: 768px) {
+  .perks-strip {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.perk-box {
+  background-color: var(--color-bg-white);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-normal);
+}
+
+.perk-box:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(56, 73, 53, 0.3);
+}
+
+.perk-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.perk-box h4 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: 6px;
+}
+
+.perk-box p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}

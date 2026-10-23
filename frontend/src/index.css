@@ -1,0 +1,344 @@
+/* ==========================================================================
+   AURA DESIGN SYSTEM
+   Modern, elegant clothing/fashion e-commerce design system
+   ========================================================================== */
+
+:root {
+  /* Brand Color Palette (from reference) */
+  --color-primary: #384935;         /* Deep Forest Olive */
+  --color-primary-hover: #293826;   /* Darker Olive for hover */
+  --color-primary-light: #52674e;
+  --color-accent-blush: #e2b7b5;    /* Soft Rose Blush */
+  --color-accent-sand: #e8ded2;     /* Warm Sand / Oat */
+  --color-accent-cream: #faf7f2;    /* Warm Linen / Cream */
+  --color-bg-base: #fcfbfa;         /* Body Background */
+  --color-bg-white: #ffffff;
+  --color-bg-subtle: #f5f2ed;
+
+  /* Typography Colors */
+  --color-text-main: #1c1c1c;       /* Deep Charcoal */
+  --color-text-muted: #6b7280;      /* Muted Gray */
+  --color-text-light: #9ca3af;
+  --color-text-inverse: #ffffff;
+
+  /* Borders & Dividers */
+  --color-border: #ede7df;
+  --color-border-light: #f3efe8;
+  --color-border-focus: #384935;
+
+  /* Footer Colors */
+  --color-footer-bg: #273425;       /* Deep Luxury Olive */
+  --color-footer-text: #ded9d0;
+  --color-footer-muted: #9aa597;
+
+  /* Typography: Clean, Professional Inter System */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-sans: var(--font-family-base);
+  --font-serif: var(--font-family-base);
+  --font-heading: var(--font-family-base);
+
+  /* Standard Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 14px 28px rgba(56, 73, 53, 0.12);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Border Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Container */
+  --container-max-width: 1240px;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: 15px;
+  font-weight: 400;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-base);
+  color: var(--color-text-main);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 1.875rem; /* 30px */
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.625rem; /* 26px */
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+h5, h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 0.9375rem; /* 15px */
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+label {
+  font-family: var(--font-family-base);
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  color: var(--color-text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all var(--transition-normal);
+}
+
+input, select, textarea {
+  font-family: var(--font-family-base);
+  font-size: 0.9375rem;
+}
+
+/* Prevent automatic mobile safari/chrome viewport zooming on inputs */
+@media (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+table {
+  font-family: var(--font-family-base);
+}
+
+/* Reusable Container */
+.aura-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .aura-container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .aura-container {
+    padding: 0 12px;
+  }
+}
+
+/* Common Section Header */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 680px) {
+  .section-header {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .section-header > div:first-child {
+    flex: 1;
+    min-width: 140px;
+  }
+  .section-header .section-title {
+    font-size: 1.4rem;
+  }
+  .section-header .bestseller-filters {
+    order: 3;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .section-header .view-all-link {
+    order: 2;
+  }
+}
+
+.section-header .section-title {
+  font-family: var(--font-family-base);
+  font-size: 1.75rem; /* 28px */
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text-main);
+}
+
+.section-header .view-all-link {
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.section-header .view-all-link:hover {
+  color: var(--color-primary);
+  transform: translateX(4px);
+}
+
+/* Primary Button Styling */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  box-shadow: 0 4px 12px rgba(56, 73, 53, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(56, 73, 53, 0.3);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 11px 26px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  transition: all var(--transition-normal);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.aura-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  font-size: 0.9rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideInUp 0.3s ease-out;
+}
+
+@media (max-width: 480px) {
+  .aura-toast {
+    left: 14px;
+    right: 14px;
+    bottom: 16px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

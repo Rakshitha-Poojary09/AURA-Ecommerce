@@ -1,0 +1,826 @@
+[
+  {
+    "index": 1,
+    "_id": "6ac4cee576e9e20bfb89d850",
+    "name": "Rakshitha Poojary",
+    "email": "rakshithapoojary560@gmail.com",
+    "role": "customer",
+    "createdAt": "2026-10-06T10:35:17.156Z",
+    "ordersCount": 14,
+    "orders": [
+      {
+        "_id": "6ac3867409f8e0dbd20b9b6f",
+        "orderId": "AUR-ORD-488634",
+        "total": 1299,
+        "status": "Delivered",
+        "createdAt": "2026-10-05T11:13:56.590Z"
+      },
+      {
+        "_id": "6ac3918dfc5a00e6934d70e6",
+        "orderId": "AUR-ORD-210084",
+        "total": 6597,
+        "status": "Cancelled",
+        "createdAt": "2026-10-05T12:01:17.591Z"
+      },
+      {
+        "_id": "6ac39471fc5a00e6934d70e7",
+        "orderId": "AUR-ORD-320056",
+        "total": 3199,
+        "status": "Delivered",
+        "createdAt": "2026-10-05T12:13:37.772Z"
+      },
+      {
+        "_id": "6ac4b219946a828767b5f345",
+        "orderId": "AUR-ORD-452211",
+        "total": 5097,
+        "status": "Delivered",
+        "createdAt": "2026-10-06T08:32:25.450Z"
+      },
+      {
+        "_id": "6ac631b0ec5f4d14ce03111f",
+        "orderId": "AUR-ORD-774806",
+        "total": 2199,
+        "status": "Pending",
+        "createdAt": "2026-10-07T11:49:04.725Z"
+      },
+      {
+        "_id": "6ac7693cd46eae811cbb97af",
+        "orderId": "AUR-ORD-878566",
+        "total": 2199,
+        "status": "Pending",
+        "createdAt": "2026-10-08T09:58:20.725Z"
+      },
+      {
+        "_id": "6ac76bc4d46eae811cbb97b7",
+        "orderId": "AUR-ORD-660710",
+        "total": 1599,
+        "status": "Delivered",
+        "createdAt": "2026-10-08T10:09:08.711Z"
+      },
+      {
+        "_id": "6ac77183c1d5d99be9e90ae1",
+        "orderId": "AUR-ORD-308195",
+        "total": 1099,
+        "status": "Delivered",
+        "createdAt": "2026-10-08T10:33:39.560Z"
+      },
+      {
+        "_id": "6ac8ae9cb2ec53ba616b96fa",
+        "orderId": "AUR-ORD-790967",
+        "total": 848,
+        "status": "Pending",
+        "createdAt": "2026-10-09T09:06:36.427Z"
+      },
+      {
+        "_id": "6ac8b943d61d77b663ec2e62",
+        "orderId": "AUR-ORD-362098",
+        "total": 1438,
+        "status": "Pending",
+        "createdAt": "2026-10-09T09:52:03.660Z"
+      },
+      {
+        "_id": "6ac8bcf0d61d77b663ec2e64",
+        "orderId": "AUR-ORD-706336",
+        "total": 2798,
+        "status": "Delivered",
+        "createdAt": "2026-10-09T10:07:44.247Z"
+      },
+      {
+        "_id": "6ac8d413c19f86c02d2be8c3",
+        "orderId": "AUR-ORD-411950",
+        "total": 6297,
+        "status": "Shipped",
+        "createdAt": "2026-10-09T11:46:27.099Z"
+      },
+      {
+        "_id": "6ac8d9c2c19f86c02d2be8f1",
+        "orderId": "AUR-ORD-916249",
+        "total": 2158,
+        "status": "Pending",
+        "createdAt": "2026-10-09T12:10:42.845Z"
+      },
+      {
+        "_id": "6ad23275bd99591979b8f88e",
+        "orderId": "AUR-ORD-520397",
+        "total": 2199,
+        "status": "Delivered",
+        "createdAt": "2026-10-16T14:19:33.960Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 5,
+    "returns": [
+      {
+        "_id": "6ace132d9cc4e23733251c11",
+        "requestId": "RET-2216592094",
+        "status": "Completed",
+        "createdAt": "2026-10-13T11:17:01.704Z"
+      },
+      {
+        "_id": "6ace14869cc4e23733251c77",
+        "requestId": "RET-5660842592",
+        "status": "Rejected",
+        "createdAt": "2026-10-13T11:22:46.101Z"
+      },
+      {
+        "_id": "6acf487ac467673fbc0e4278",
+        "requestId": "RET-4029242000",
+        "status": "Approved",
+        "createdAt": "2026-10-14T09:16:43.140Z"
+      },
+      {
+        "_id": "6acf4c03c467673fbc0e4465",
+        "requestId": "RET-3077024660",
+        "status": "Completed",
+        "createdAt": "2026-10-14T09:31:47.717Z"
+      },
+      {
+        "_id": "6acf6b747a8d81e6441bc7a8",
+        "requestId": "RET-3562898869",
+        "status": "Received and Inspected",
+        "createdAt": "2026-10-14T11:45:56.320Z"
+      }
+    ],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ac78779d67b774299cf7c4b",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "_id": "6ac622da34babd08ac12e344",
+    "name": "AURA Executive Admin",
+    "email": "admin@aura.com",
+    "role": "admin",
+    "createdAt": "2026-10-07T10:45:46.923Z",
+    "ordersCount": 0,
+    "orders": [],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 0,
+    "notifs": []
+  },
+  {
+    "index": 3,
+    "_id": "6ac752dbeda470d5cf46a56d",
+    "name": "Kriti",
+    "email": "kriti@gmail.com",
+    "role": "customer",
+    "createdAt": "2026-10-08T08:22:51.498Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6ac75318eda470d5cf46a56e",
+        "orderId": "AUR-ORD-608633",
+        "total": 1199,
+        "status": "Pending",
+        "createdAt": "2026-10-08T08:23:52.345Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ac78779d67b774299cf7c4a",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "_id": "6ac787bd1f823957149a4b90",
+    "name": "Kavi",
+    "email": "kavi@gmal.com",
+    "role": "customer",
+    "createdAt": "2026-10-08T12:08:29.613Z",
+    "ordersCount": 0,
+    "orders": [],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ac787c5d67b774299cf7c4d",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "_id": "6accb642b0bc7d996cf4eccf",
+    "name": "Test Customer",
+    "email": "customer_test_1791800898895@example.com",
+    "role": "customer",
+    "createdAt": "2026-10-12T10:28:18.953Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6accb644b0bc7d996cf4ecd4",
+        "orderId": "AUR-TEST-1791800900021",
+        "total": 1500,
+        "status": "Processing",
+        "createdAt": "2026-10-12T10:28:20.074Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6accb6c0d67b774299cf7c60",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "_id": "6accb66cb0bc7d996cf4ecd8",
+    "name": "Separation Test User",
+    "email": "sep_customer_1791800939860@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-12T10:29:00.248Z",
+    "ordersCount": 0,
+    "orders": [],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6accb6c0d67b774299cf7c5f",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "_id": "6ace17309cc4e23733251ce1",
+    "name": "Ashri",
+    "email": "ashri123@gmail.com",
+    "role": "customer",
+    "createdAt": "2026-10-13T11:34:08.050Z",
+    "ordersCount": 0,
+    "orders": [],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ace1754d67b774299cf7c62",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "_id": "6acf4a88c467673fbc0e43dc",
+    "name": "Ananya Roy Sharma",
+    "email": "ananya_updated_1791969928648@example.com",
+    "role": "customer",
+    "createdAt": "2026-10-14T09:25:28.875Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6acf4a89c467673fbc0e43de",
+        "orderId": "AUR-CUST-A-1791969928648",
+        "total": 1500,
+        "status": "Processing",
+        "createdAt": "2026-10-14T09:25:29.323Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6acf4b01d67b774299cf7c66",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "_id": "6acf4a89c467673fbc0e43dd",
+    "name": "Vikram Mehta",
+    "email": "patron_b_1791969928648@example.com",
+    "role": "customer",
+    "createdAt": "2026-10-14T09:25:29.103Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6acf4a89c467673fbc0e43e0",
+        "orderId": "AUR-CUST-B-1791969928648",
+        "total": 1500,
+        "status": "Delivered",
+        "createdAt": "2026-10-14T09:25:29.341Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6acf4b01d67b774299cf7c65",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "_id": "6ad0946bdd006cd2294bfedd",
+    "name": "Ananya Roy",
+    "email": "mod_customer_1792054378927@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T08:52:59.689Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6ad0946bdd006cd2294bfede",
+        "orderId": "AUR-MOD-1792054378927",
+        "total": 1500,
+        "status": "Processing",
+        "createdAt": "2026-10-15T08:52:59.902Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad097e9d67b774299cf7c76",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "_id": "6ad0947bdd006cd2294bfee8",
+    "name": "Kavita Verma",
+    "email": "reviewer_one_1792054395033@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T08:53:15.308Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6ad0947bdd006cd2294bfeed",
+        "orderId": "AUR-PURCH-1792054395033",
+        "total": 1500,
+        "status": "Delivered",
+        "createdAt": "2026-10-15T08:53:15.972Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad097e9d67b774299cf7c75",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "_id": "6ad0947bdd006cd2294bfee9",
+    "name": "Arjun Kapoor",
+    "email": "reviewer_two_1792054395033@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T08:53:15.490Z",
+    "ordersCount": 0,
+    "orders": [],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad097e9d67b774299cf7c74",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "_id": "6ad0947bdd006cd2294bfeea",
+    "name": "Meera Nair",
+    "email": "reviewer_three_1792054395033@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T08:53:15.636Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6ad0947bdd006cd2294bfeeb",
+        "orderId": "AUR-CNCL-1792054395033",
+        "total": 1500,
+        "status": "Cancelled",
+        "createdAt": "2026-10-15T08:53:15.930Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad097e9d67b774299cf7c73",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "_id": "6ad0951fdd006cd2294bfeff",
+    "name": "Ananya Roy",
+    "email": "mod_customer_1792054558910@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T08:55:59.447Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6ad0951fdd006cd2294bff00",
+        "orderId": "AUR-MOD-1792054558910",
+        "total": 1500,
+        "status": "Processing",
+        "createdAt": "2026-10-15T08:55:59.648Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad097e9d67b774299cf7c72",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "_id": "6ad0952cdd006cd2294bff0a",
+    "name": "Kavita Verma",
+    "email": "reviewer_one_1792054572559@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T08:56:12.922Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6ad0952ddd006cd2294bff0f",
+        "orderId": "AUR-PURCH-1792054572559",
+        "total": 1500,
+        "status": "Delivered",
+        "createdAt": "2026-10-15T08:56:13.521Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad097e9d67b774299cf7c71",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "_id": "6ad0952ddd006cd2294bff0b",
+    "name": "Arjun Kapoor",
+    "email": "reviewer_two_1792054572559@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T08:56:13.095Z",
+    "ordersCount": 0,
+    "orders": [],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad097e9d67b774299cf7c70",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "_id": "6ad0952ddd006cd2294bff0c",
+    "name": "Meera Nair",
+    "email": "reviewer_three_1792054572559@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T08:56:13.243Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6ad0952ddd006cd2294bff0d",
+        "orderId": "AUR-CNCL-1792054572559",
+        "total": 1500,
+        "status": "Cancelled",
+        "createdAt": "2026-10-15T08:56:13.464Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad097e9d67b774299cf7c6f",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "_id": "6ad099bedd006cd2294bff79",
+    "name": "Ananya Roy",
+    "email": "mod_customer_1792055741787@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T09:15:42.758Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6ad099bedd006cd2294bff7a",
+        "orderId": "AUR-MOD-1792055741787",
+        "total": 1500,
+        "status": "Processing",
+        "createdAt": "2026-10-15T09:15:42.990Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad09a29d67b774299cf7c81",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "_id": "6ad099c7dd006cd2294bff84",
+    "name": "Kavita Verma",
+    "email": "reviewer_one_1792055751368@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T09:15:51.836Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6ad099c8dd006cd2294bff89",
+        "orderId": "AUR-PURCH-1792055751368",
+        "total": 1500,
+        "status": "Delivered",
+        "createdAt": "2026-10-15T09:15:52.439Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad09a29d67b774299cf7c80",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "_id": "6ad099c8dd006cd2294bff85",
+    "name": "Arjun Kapoor",
+    "email": "reviewer_two_1792055751368@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T09:15:52.031Z",
+    "ordersCount": 0,
+    "orders": [],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad09a29d67b774299cf7c7f",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "_id": "6ad099c8dd006cd2294bff86",
+    "name": "Meera Nair",
+    "email": "reviewer_three_1792055751368@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T09:15:52.172Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6ad099c8dd006cd2294bff87",
+        "orderId": "AUR-CNCL-1792055751368",
+        "total": 1500,
+        "status": "Cancelled",
+        "createdAt": "2026-10-15T09:15:52.390Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad09a29d67b774299cf7c7e",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "_id": "6ad0a1dc178aed61185a7414",
+    "name": "Ananya Roy",
+    "email": "mod_customer_1792057819458@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T09:50:20.336Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6ad0a1dc178aed61185a7415",
+        "orderId": "AUR-MOD-1792057819458",
+        "total": 1500,
+        "status": "Processing",
+        "createdAt": "2026-10-15T09:50:20.612Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad0a43ad67b774299cf7c88",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "_id": "6ad0a1e8178aed61185a741f",
+    "name": "Kavita Verma",
+    "email": "reviewer_one_1792057831754@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T09:50:32.236Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6ad0a1ea178aed61185a7424",
+        "orderId": "AUR-PURCH-1792057831754",
+        "total": 1500,
+        "status": "Delivered",
+        "createdAt": "2026-10-15T09:50:34.486Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad0a43ad67b774299cf7c87",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "_id": "6ad0a1e8178aed61185a7420",
+    "name": "Arjun Kapoor",
+    "email": "reviewer_two_1792057831754@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T09:50:32.438Z",
+    "ordersCount": 0,
+    "orders": [],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad0a43ad67b774299cf7c86",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "_id": "6ad0a1e8178aed61185a7421",
+    "name": "Meera Nair",
+    "email": "reviewer_three_1792057831754@aura.com",
+    "role": "customer",
+    "createdAt": "2026-10-15T09:50:32.619Z",
+    "ordersCount": 1,
+    "orders": [
+      {
+        "_id": "6ad0a1e9178aed61185a7422",
+        "orderId": "AUR-CNCL-1792057831754",
+        "total": 1500,
+        "status": "Cancelled",
+        "createdAt": "2026-10-15T09:50:33.849Z"
+      }
+    ],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad0a43ad67b774299cf7c85",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "_id": "6ad229394bf5e1c69310c4b3",
+    "name": "Customer A 1792158009039",
+    "email": "customera_1792158009039@aura-test.com",
+    "role": "customer",
+    "createdAt": "2026-10-16T13:40:09.828Z",
+    "ordersCount": 0,
+    "orders": [],
+    "reviewsCount": 0,
+    "reviews": [],
+    "returnsCount": 0,
+    "returns": [],
+    "notifsCount": 1,
+    "notifs": [
+      {
+        "_id": "6ad229c9d67b774299cf7c89",
+        "title": "New Patron Registered",
+        "type": "customers"
+      }
+    ]
+  }
+]

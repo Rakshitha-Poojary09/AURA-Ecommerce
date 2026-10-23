@@ -1,0 +1,733 @@
+/* ==========================================================================
+   AURA PATRON & INFLUENCER TRY-ONS SECTION
+   Circular Video Stories Track & 9:16 Vertical Modal Player
+   ========================================================================== */
+
+.patron-tryons-homepage-section {
+  padding: 56px 0 40px;
+  background: #FAF7F2;
+  border-top: 1px solid rgba(56, 73, 53, 0.08);
+  border-bottom: 1px solid rgba(56, 73, 53, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.tryons-container {
+  max-width: var(--container-max-width, 1400px);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.tryons-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.tryons-eyebrow {
+  font-family: var(--font-family-base, inherit);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #384935;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.tryons-eyebrow .live-sparkle {
+  color: #c98a88;
+  font-size: 0.95rem;
+}
+
+.tryons-title {
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: #1A2218;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+}
+
+.tryons-subtitle {
+  font-size: 0.92rem;
+  color: #5d675b;
+  margin: 0;
+  max-width: 620px;
+  line-height: 1.45;
+}
+
+.tryons-count-pill {
+  background: #384935;
+  color: #FAF7F2;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(56, 73, 53, 0.15);
+}
+
+/* 1. Circular Video Stories Track */
+.tryons-track {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 8px 4px 14px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #E2B7B5 transparent;
+}
+
+.tryons-track::-webkit-scrollbar {
+  height: 5px;
+}
+
+.tryons-track::-webkit-scrollbar-thumb {
+  background: #E2B7B5;
+  border-radius: 10px;
+}
+
+/* Individual Story Circle Item */
+.video-story-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  flex-shrink: 0;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  outline: none;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-story-item:hover,
+.video-story-item:focus-visible {
+  transform: translateY(-4px);
+}
+
+/* Olive-Green & Blush Story Ring */
+.video-story-ring {
+  position: relative;
+  width: 114px;
+  height: 114px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, #384935 0%, #D48D8B 50%, #384935 100%);
+  box-shadow: 0 4px 16px rgba(56, 73, 53, 0.14);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-story-item:hover .video-story-ring,
+.video-story-item:focus-visible .video-story-ring {
+  background: linear-gradient(135deg, #273425 0%, #E2B7B5 50%, #384935 100%);
+  box-shadow: 0 6px 22px rgba(56, 73, 53, 0.24);
+  transform: scale(1.04);
+}
+
+/* Inner Circle Container */
+.video-story-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #FAF7F2;
+  border: 2px solid #FAF7F2;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Story Video & Avatar */
+.video-story-avatar,
+.video-story-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+  background-color: #1a2218;
+  transition: transform 0.35s ease;
+}
+
+.video-story-item:hover .video-story-avatar,
+.video-story-item:hover .video-story-video {
+  transform: scale(1.08);
+}
+
+/* Small Play Badge */
+.video-story-play-badge {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #384935;
+  color: #FAF7F2;
+  border: 2px solid #FAF7F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(26, 34, 24, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}
+
+.video-story-play-badge.minimized {
+  opacity: 0;
+  transform: scale(0.6);
+  pointer-events: none;
+}
+
+.video-story-item:hover .video-story-play-badge.minimized,
+.video-story-play-badge.blocked-fallback {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  background: #D48D8B;
+  color: #FAF7F2;
+}
+
+/* Live Pulse Dot */
+.story-live-motion-dot {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E2B7B5;
+  border: 1.5px solid #FAF7F2;
+  box-shadow: 0 0 8px rgba(226, 183, 181, 0.9);
+  animation: storyLivePulse 2s infinite ease-in-out;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes storyLivePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+}
+
+/* Metadata underneath Circle */
+.video-story-meta {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.video-story-name {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #1A2218;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110px;
+  line-height: 1.25;
+}
+
+.video-story-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110px;
+  line-height: 1.2;
+}
+
+.video-story-label.verified {
+  color: #276721;
+  font-weight: 600;
+}
+
+.video-story-label.influencer {
+  color: #8A4341;
+  font-weight: 600;
+}
+
+.video-story-label.patron {
+  color: #6A7468;
+}
+
+/* ==========================================================================
+   2. Fullscreen / Modal 9:16 Video Player
+   ========================================================================== */
+
+.tryon-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 18, 13, 0.92);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: tryonFadeIn 0.25s ease-out;
+}
+
+@keyframes tryonFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.tryon-modal-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  max-height: 92vh;
+  background: #1A2218;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(226, 183, 181, 0.2);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.tryon-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #FAF7F2;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+.tryon-close-btn:hover {
+  background: rgba(226, 183, 181, 0.3);
+  transform: scale(1.08);
+}
+
+/* Nav Arrows */
+.tryon-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(26, 34, 24, 0.7);
+  color: #FAF7F2;
+  border: 1px solid rgba(226, 183, 181, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  line-height: 1;
+  transition: all 0.2s;
+  z-index: 10000;
+}
+
+.tryon-nav-btn.prev { left: 24px; }
+.tryon-nav-btn.next { right: 24px; }
+
+.tryon-nav-btn:hover:not(.disabled) {
+  background: #384935;
+  border-color: #E2B7B5;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.tryon-nav-btn.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Video Stage (Left 9:16) */
+.tryon-video-stage {
+  flex: 1 1 55%;
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 540px;
+}
+
+.tryon-video-element {
+  width: 100%;
+  height: 100%;
+  max-height: 88vh;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* Story Progress Segments */
+.tryon-progress-segments {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  gap: 5px;
+  z-index: 5;
+}
+
+.tryon-progress-segment {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tryon-progress-segment.completed {
+  background: #FAF7F2;
+}
+
+.tryon-progress-segment.active {
+  background: #E2B7B5;
+  box-shadow: 0 0 8px rgba(226, 183, 181, 0.8);
+}
+
+.tryon-center-play-trigger {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(56, 73, 53, 0.85);
+  color: #FAF7F2;
+  border: 2px solid #E2B7B5;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 6;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+/* Top bar in video */
+.tryon-top-bar {
+  position: absolute;
+  top: 24px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+.tryon-badge-wrap {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tryon-influencer-pill {
+  background: rgba(212, 141, 139, 0.85);
+  color: #FAF7F2;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.tryon-verified-pill {
+  background: rgba(56, 73, 53, 0.85);
+  color: #FAF7F2;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tryon-sound-btn {
+  background: rgba(0, 0, 0, 0.6);
+  color: #FAF7F2;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tryon-sound-btn:hover,
+.tryon-sound-btn.active-audio {
+  background: #384935;
+  border-color: #E2B7B5;
+}
+
+/* Bottom Controls */
+.tryon-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px 14px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  z-index: 5;
+}
+
+.tryon-seekbar-wrap {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.tryon-seekbar-input {
+  width: 100%;
+  height: 4px;
+  accent-color: #E2B7B5;
+  cursor: pointer;
+}
+
+.tryon-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tryon-play-btn {
+  background: none;
+  border: none;
+  color: #FAF7F2;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.tryon-time-text {
+  font-size: 0.75rem;
+  color: #c5cec2;
+  font-family: monospace;
+}
+
+.tryon-volume-slider-wrap {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.tryon-volume-input {
+  width: 60px;
+  height: 4px;
+  accent-color: #E2B7B5;
+  cursor: pointer;
+}
+
+/* Sidebar Info (Right Side) */
+.tryon-info-sidebar {
+  flex: 1 1 45%;
+  background: #FAF7F2;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.tryon-creator-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tryon-creator-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #384935;
+  color: #FAF7F2;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tryon-creator-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1A2218;
+  margin: 0 0 2px;
+}
+
+.tryon-creator-handle {
+  font-size: 0.82rem;
+  color: #8A4341;
+  font-weight: 600;
+}
+
+.tryon-review-details {
+  margin-bottom: 24px;
+}
+
+.tryon-review-heading {
+  font-family: var(--font-family-serif, Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1A2218;
+  margin: 0 0 10px;
+  line-height: 1.35;
+}
+
+.tryon-review-notes {
+  font-size: 0.9rem;
+  color: #4b5548;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Connected Product Card */
+.tryon-product-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #E8DED2;
+  box-shadow: 0 4px 14px rgba(56, 73, 53, 0.08);
+  margin-top: auto;
+}
+
+.tryon-prod-card-top {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.tryon-prod-thumb {
+  width: 68px;
+  height: 82px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f0eae1;
+}
+
+.tryon-prod-info {
+  flex: 1;
+}
+
+.tryon-prod-badge {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8A4341;
+  margin-bottom: 4px;
+}
+
+.tryon-prod-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1A2218;
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.tryon-prod-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.tryon-prod-price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #384935;
+}
+
+.tryon-prod-mrp {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.btn-shop-tryon-product {
+  width: 100%;
+  padding: 11px 16px;
+  background: #384935;
+  color: #FAF7F2;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn-shop-tryon-product:hover {
+  background: #273425;
+  box-shadow: 0 4px 12px rgba(56, 73, 53, 0.25);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .tryon-modal-container {
+    flex-direction: column;
+    max-height: 94vh;
+  }
+
+  .tryon-video-stage {
+    min-height: 380px;
+    flex: 1 1 auto;
+  }
+
+  .tryon-info-sidebar {
+    padding: 20px 16px;
+  }
+
+  .tryon-nav-btn {
+    display: none;
+  }
+
+  .tryons-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tryons-title {
+    font-size: 1.5rem;
+  }
+}
