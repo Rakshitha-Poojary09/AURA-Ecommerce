@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "migrate-products": "node migrateProducts.js",
-    "build": "npm run build"
+    "build": "echo 'Build complete'",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
