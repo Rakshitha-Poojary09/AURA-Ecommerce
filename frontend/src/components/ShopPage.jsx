@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import './ShopPage.css';
 import { normalizeProductImageUrl, handleImageError } from '../utils/imageUtils';
+import { API_BASE } from '../utils/apiConfig';
 
 // Express / MongoDB backend API endpoint for products
-const API_URL = 'http://localhost:5000/api/products';
+const API_URL = `${API_BASE}/api/products`;
 
 export default function ShopPage({ 
   onAddToCart, 

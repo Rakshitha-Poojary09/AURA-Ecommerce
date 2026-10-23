@@ -3,13 +3,14 @@ import './ProductDetails.css';
 import SizeGuideModal from './SizeGuideModal';
 import ProductRecommendations from './ProductRecommendations';
 import { normalizeProductImageUrl, handleImageError, NEUTRAL_PLACEHOLDER_IMAGE } from '../utils/imageUtils';
+import { API_BASE } from '../utils/apiConfig';
 
 export const getReviewMediaUrl = (url) => {
   if (!url) return '';
   if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:') || url.startsWith('blob:')) {
     return url;
   }
-  return `http://localhost:5000${url.startsWith('/') ? '' : '/'}${url}`;
+  return `${API_BASE}${url.startsWith('/') ? '' : '/'}${url}`;
 };
 
 /**
@@ -602,7 +603,7 @@ export default function ProductDetails({
     if (!prodId) return;
     setIsLoadingReviews(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/products/${prodId}/reviews`, {
+      const res = await fetch(`${API_BASE}/api/products/${prodId}/reviews`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -707,13 +708,13 @@ export default function ProductDetails({
 
       let res;
       if (editingReviewId) {
-        res = await fetch(`http://localhost:5000/api/reviews/${editingReviewId}`, {
+        res = await fetch(`${API_BASE}/api/reviews/${editingReviewId}`, {
           method: 'PUT',
           credentials: 'include',
           body: formData,
         });
       } else {
-        res = await fetch(`http://localhost:5000/api/products/${prodId}/reviews`, {
+        res = await fetch(`${API_BASE}/api/products/${prodId}/reviews`, {
           method: 'POST',
           credentials: 'include',
           body: formData,
@@ -752,7 +753,7 @@ export default function ProductDetails({
     if (!window.confirm('Are you sure you want to delete your review?')) return;
     setDeletingReviewId(reviewId);
     try {
-      const res = await fetch(`http://localhost:5000/api/reviews/${reviewId}`, {
+      const res = await fetch(`${API_BASE}/api/reviews/${reviewId}`, {
         method: 'DELETE',
         credentials: 'include',
       });

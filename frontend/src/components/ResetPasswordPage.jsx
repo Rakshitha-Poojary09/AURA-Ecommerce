@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ResetPasswordPage.css';
+import { API_BASE } from '../utils/apiConfig';
 
 export default function ResetPasswordPage({ token: propToken, onNavigate }) {
   // Extract token from prop or from window.location.search (?token=...)
@@ -40,7 +41,7 @@ export default function ResetPasswordPage({ token: propToken, onNavigate }) {
     const verifyToken = async () => {
       setIsVerifyingToken(true);
       try {
-        const res = await fetch('http://localhost:5000/api/auth/verify-reset-token', {
+        const res = await fetch(`${API_BASE}/api/auth/verify-reset-token`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ token })
@@ -115,7 +116,7 @@ export default function ResetPasswordPage({ token: propToken, onNavigate }) {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/reset-password', {
+      const response = await fetch(`${API_BASE}/api/auth/reset-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

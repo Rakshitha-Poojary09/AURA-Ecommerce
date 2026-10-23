@@ -20,6 +20,7 @@ import WishlistPage from './components/WishlistPage';
 import TrackOrderPage from './components/TrackOrderPage';
 import CustomerCarePage from './components/CustomerCarePage';
 import { normalizeProductImageUrl, handleImageError, NEUTRAL_PLACEHOLDER_IMAGE } from './utils/imageUtils';
+import { API_BASE } from './utils/apiConfig';
 
 // Helper to normalize product images (local paths and remote URLs)
 const normalizeImageUrl = (imageUrl) => {
@@ -265,7 +266,7 @@ function App() {
   const fetchWishlist = async (user = currentUser, currentCatalog = products) => {
     if (user) {
       try {
-        const response = await fetch('http://localhost:5000/api/wishlist', {
+        const response = await fetch(`${API_BASE}/api/wishlist`, {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
@@ -297,7 +298,7 @@ function App() {
     setProductsLoading(true);
     setProductsError(null);
     try {
-      const response = await fetch('http://localhost:5000/api/products');
+      const response = await fetch(`${API_BASE}/api/products`);
       if (!response.ok) {
         throw new Error(`Failed to load products (HTTP ${response.status})`);
       }
@@ -357,7 +358,7 @@ function App() {
   // Check existing session via HTTP-only cookie on application mount
   const checkAuthSession = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/me', {
+      const response = await fetch(`${API_BASE}/api/auth/me`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -416,7 +417,7 @@ function App() {
     const guestIds = getGuestWishlist();
     if (guestIds.length > 0) {
       try {
-        const response = await fetch('http://localhost:5000/api/wishlist/merge', {
+        const response = await fetch(`${API_BASE}/api/wishlist/merge`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
@@ -450,7 +451,7 @@ function App() {
     const guestIds = getGuestWishlist();
     if (guestIds.length > 0) {
       try {
-        const response = await fetch('http://localhost:5000/api/wishlist/merge', {
+        const response = await fetch(`${API_BASE}/api/wishlist/merge`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
@@ -477,7 +478,7 @@ function App() {
 
   const handleLogout = async () => {
     try {
-      await fetch('http://localhost:5000/api/auth/logout', {
+      await fetch(`${API_BASE}/api/auth/logout`, {
         method: 'POST',
         credentials: 'include',
       });
@@ -696,7 +697,7 @@ function App() {
 
     if (currentUser) {
       try {
-        const response = await fetch('http://localhost:5000/api/wishlist/toggle', {
+        const response = await fetch(`${API_BASE}/api/wishlist/toggle`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
@@ -740,7 +741,7 @@ function App() {
 
     if (currentUser) {
       try {
-        const response = await fetch(`http://localhost:5000/api/wishlist/${prodId}`, {
+        const response = await fetch(`${API_BASE}/api/wishlist/${prodId}`, {
           method: 'DELETE',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',

@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import './PatronTryOnsReel.css';
 import { normalizeProductImageUrl, handleImageError } from '../utils/imageUtils';
+import { API_BASE } from '../utils/apiConfig';
 
-const BACKEND_URL = (
-  (typeof import.meta !== 'undefined' && import.meta.env && (import.meta.env.VITE_API_URL || import.meta.env.VITE_BACKEND_URL)) ||
-  'http://localhost:5000'
-).replace(/\/+$/, '');
+const BACKEND_URL = API_BASE;
 
 const getMediaUrl = (url) => {
   if (!url) return '';

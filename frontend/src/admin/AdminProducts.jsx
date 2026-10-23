@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './AdminProducts.css';
+import { API_BASE } from '../utils/apiConfig';
 
 // Backend Express API endpoint for products
-const API_URL = 'http://localhost:5000/api/products';
+const API_URL = `${API_BASE}/api/products`;
 
 // Available clothing sizes for selection
 const AVAILABLE_SIZES = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
@@ -363,7 +364,7 @@ export default function AdminProducts({ initialOpenForm = false }) {
       console.error('API connection error:', networkError);
       setSubmitFeedback({
         type: 'error',
-        text: 'Could not connect to the backend server at http://localhost:5000. Please ensure your Express backend is running.',
+        text: `Could not connect to the backend server at ${API_BASE}. Please ensure your Express backend is running.`,
       });
     } finally {
       setIsSaving(false);

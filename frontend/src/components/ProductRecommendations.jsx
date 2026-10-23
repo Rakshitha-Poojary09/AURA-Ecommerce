@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import './ProductRecommendations.css';
 import { normalizeProductImageUrl, handleImageError } from '../utils/imageUtils';
+import { API_BASE } from '../utils/apiConfig';
 
 // Garment categorization patterns for similarity matching
 const GARMENT_PATTERNS = [
@@ -155,7 +156,7 @@ export default function ProductRecommendations({
     const fetchBackendRecommendations = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch(`http://localhost:5000/api/products/${productId}/recommendations`, {
+        const res = await fetch(`${API_BASE}/api/products/${productId}/recommendations`, {
           signal: controller.signal
         });
         if (res.ok) {

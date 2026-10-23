@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ForgotPasswordPage.css';
+import { API_BASE } from '../utils/apiConfig';
 
 export default function ForgotPasswordPage({ onNavigate }) {
   const [email, setEmail] = useState('');
@@ -35,7 +36,7 @@ export default function ForgotPasswordPage({ onNavigate }) {
     const targetEmail = email.trim().toLowerCase();
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/forgot-password', {
+      const response = await fetch(`${API_BASE}/api/auth/forgot-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

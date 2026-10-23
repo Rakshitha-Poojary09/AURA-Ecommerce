@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './CheckoutPage.css';
 import { normalizeProductImageUrl, handleImageError } from '../utils/imageUtils';
 import AvailableCoupons from './AvailableCoupons';
+import { API_BASE } from '../utils/apiConfig';
 
 // Indian states list for shipping selection
 const INDIAN_STATES = [
@@ -133,7 +134,7 @@ export default function CheckoutPage({
     setCouponFeedback(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/coupons/validate', {
+      const response = await fetch(`${API_BASE}/api/coupons/validate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -333,7 +334,7 @@ export default function CheckoutPage({
 
     try {
       /* MERN API Call: Send order payload to Express/MongoDB backend */
-      const response = await fetch('http://localhost:5000/api/orders', {
+      const response = await fetch(`${API_BASE}/api/orders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

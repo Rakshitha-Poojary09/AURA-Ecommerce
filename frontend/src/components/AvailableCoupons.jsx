@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './AvailableCoupons.css';
+import { API_BASE } from '../utils/apiConfig';
 
-const API_COUPONS_URL = 'http://localhost:5000/api/coupons';
+const API_COUPONS_URL = `${API_BASE}/api/coupons`;
 
 /**
  * Format date nicely for customer readability (e.g., 08 Nov 2026)

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CartPage.css';
 import AvailableCoupons from './AvailableCoupons';
+import { API_BASE } from '../utils/apiConfig';
 
 export default function CartPage({
   cartItems = [],
@@ -118,7 +119,7 @@ export default function CartPage({
     setPromoMessage(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/coupons/validate', {
+      const response = await fetch(`${API_BASE}/api/coupons/validate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

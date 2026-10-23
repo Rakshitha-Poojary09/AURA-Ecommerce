@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './AdminOrders.css';
+import { API_BASE } from '../utils/apiConfig';
 
 /**
  * Fallback sample order data (used if backend is unavailable or MongoDB has no orders yet)
@@ -43,7 +44,7 @@ export default function AdminOrders() {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:5000/api/orders');
+      const response = await fetch(`${API_BASE}/api/orders`);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -81,7 +82,7 @@ export default function AdminOrders() {
     setUpdatingOrderId(targetId);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/orders/${targetId}/status`, {
+      const response = await fetch(`${API_BASE}/api/orders/${targetId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

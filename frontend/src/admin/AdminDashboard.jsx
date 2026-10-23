@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './AdminDashboard.css';
 import AdminProducts from './AdminProducts';
 import AdminOrders from './AdminOrders';
+import { API_BASE } from '../utils/apiConfig';
 
 export default function AdminDashboard({ onBackToStore }) {
   // Navigation & UI state
@@ -35,8 +36,8 @@ export default function AdminDashboard({ onBackToStore }) {
 
     try {
       const [productsRes, ordersRes] = await Promise.all([
-        fetch('http://localhost:5000/api/products'),
-        fetch('http://localhost:5000/api/orders'),
+        fetch(`${API_BASE}/api/products`),
+        fetch(`${API_BASE}/api/orders`),
       ]);
 
       if (!productsRes.ok || !ordersRes.ok) {
@@ -563,7 +564,7 @@ export default function AdminDashboard({ onBackToStore }) {
                   <div className="error-banner-content">
                     <h3 className="error-banner-title">{error}</h3>
                     <p className="error-banner-subtext">
-                      Backend server expected on <code>http://localhost:5000</code>. Verify that <code>node server.js</code> is running.
+                      Backend server expected on <code>{API_BASE}</code>. Verify that backend is running.
                     </p>
                     <button className="error-retry-btn" onClick={() => fetchDashboardData(true)}>
                       Retry Connection

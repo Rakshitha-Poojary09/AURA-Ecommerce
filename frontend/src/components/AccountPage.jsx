@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './AccountPage.css';
 import { normalizeProductImageUrl, handleImageError } from '../utils/imageUtils';
 import ReturnRequestModal from './ReturnRequestModal';
+import { API_BASE } from '../utils/apiConfig';
 
 // Indian states list for address selection
 const INDIAN_STATES = [
@@ -107,7 +108,7 @@ export default function AccountPage({
       setIsLoadingOrders(true);
       setOrderError(null);
       try {
-        const response = await fetch('http://localhost:5000/api/orders/my-orders', {
+        const response = await fetch(`${API_BASE}/api/orders/my-orders`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -156,7 +157,7 @@ export default function AccountPage({
     setIsLoadingAddresses(true);
     setAddressError('');
     try {
-      const response = await fetch('http://localhost:5000/api/auth/addresses', {
+      const response = await fetch(`${API_BASE}/api/auth/addresses`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -256,8 +257,8 @@ export default function AccountPage({
     try {
       const isEditing = Boolean(editingAddressId);
       const url = isEditing 
-        ? `http://localhost:5000/api/auth/addresses/${editingAddressId}`
-        : 'http://localhost:5000/api/auth/addresses';
+        ? `${API_BASE}/api/auth/addresses/${editingAddressId}`
+        : `${API_BASE}/api/auth/addresses`;
       const method = isEditing ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -297,7 +298,7 @@ export default function AccountPage({
     setAddressError('');
     setAddressSuccessMsg('');
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/addresses/${addressId}`, {
+      const response = await fetch(`${API_BASE}/api/auth/addresses/${addressId}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include'
@@ -317,7 +318,7 @@ export default function AccountPage({
     setAddressError('');
     setAddressSuccessMsg('');
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/addresses/${addressId}/default`, {
+      const response = await fetch(`${API_BASE}/api/auth/addresses/${addressId}/default`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include'
@@ -358,7 +359,8 @@ export default function AccountPage({
 
     setIsChangingPassword(true);
     try {
-      const response = await fetch('http://localhost:5000/api/auth/change-password', {
+      
+      const response = await fetch(`${API_BASE}/api/auth/change-password`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -388,7 +390,7 @@ export default function AccountPage({
     setIsLoadingReturns(true);
     setReturnRequestsError('');
     try {
-      const response = await fetch('http://localhost:5000/api/returns/my-requests', {
+      const response = await fetch(`${API_BASE}/api/returns/my-requests`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -421,7 +423,7 @@ export default function AccountPage({
 
     try {
       setLoadingDetailId(req.requestId || req._id);
-      const res = await fetch(`http://localhost:5000/api/returns/my-requests/${encodeURIComponent(idToFetch)}`, {
+      const res = await fetch(`${API_BASE}/api/returns/my-requests/${encodeURIComponent(idToFetch)}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include'
@@ -446,7 +448,7 @@ export default function AccountPage({
     }
     setCancellingRequestId(requestId);
     try {
-      const res = await fetch(`http://localhost:5000/api/returns/my-requests/${encodeURIComponent(requestId)}/cancel`, {
+      const res = await fetch(`${API_BASE}/api/returns/my-requests/${encodeURIComponent(requestId)}/cancel`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include'
@@ -502,7 +504,7 @@ export default function AccountPage({
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/profile', {
+      const response = await fetch(`${API_BASE}/api/auth/profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

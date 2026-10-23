@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './RegisterPage.css';
+import { API_BASE } from '../utils/apiConfig';
 
 export default function RegisterPage({ 
   onNavigate, 
@@ -29,7 +30,7 @@ export default function RegisterPage({
     setIsResending(true);
     setResendStatus('');
     try {
-      const response = await fetch('http://localhost:5000/api/auth/resend-verification', {
+      const response = await fetch(`${API_BASE}/api/auth/resend-verification`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -103,7 +104,7 @@ export default function RegisterPage({
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetch(`${API_BASE}/api/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

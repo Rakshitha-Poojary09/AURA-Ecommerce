@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './ReturnRequestModal.css';
 import { normalizeProductImageUrl, handleImageError } from '../utils/imageUtils';
+import { API_BASE } from '../utils/apiConfig';
 
 const REASON_OPTIONS = [
   'Wrong item received',
@@ -44,7 +45,7 @@ export default function ReturnRequestModal({
     try {
       let res;
       if (isGuest) {
-        res = await fetch('http://localhost:5000/api/returns/guest/eligibility', {
+        res = await fetch(`${API_BASE}/api/returns/guest/eligibility`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -53,7 +54,7 @@ export default function ReturnRequestModal({
           })
         });
       } else {
-        res = await fetch(`http://localhost:5000/api/returns/eligibility/${order.orderId}`, {
+        res = await fetch(`${API_BASE}/api/returns/eligibility/${order.orderId}`, {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include'
@@ -108,7 +109,7 @@ export default function ReturnRequestModal({
     try {
       let res;
       if (isGuest) {
-        res = await fetch('http://localhost:5000/api/returns/guest/cancel', {
+        res = await fetch(`${API_BASE}/api/returns/guest/cancel`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -118,7 +119,7 @@ export default function ReturnRequestModal({
           })
         });
       } else {
-        res = await fetch(`http://localhost:5000/api/returns/my-requests/${requestId}/cancel`, {
+        res = await fetch(`${API_BASE}/api/returns/my-requests/${requestId}/cancel`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include'
@@ -239,7 +240,7 @@ export default function ReturnRequestModal({
     try {
       let res;
       if (isGuest) {
-        res = await fetch('http://localhost:5000/api/returns/guest', {
+        res = await fetch(`${API_BASE}/api/returns/guest`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -252,7 +253,7 @@ export default function ReturnRequestModal({
           })
         });
       } else {
-        res = await fetch('http://localhost:5000/api/returns', {
+        res = await fetch(`${API_BASE}/api/returns`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',

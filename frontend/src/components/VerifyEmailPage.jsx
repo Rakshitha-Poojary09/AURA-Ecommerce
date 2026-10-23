@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './VerifyEmailPage.css';
+import { API_BASE } from '../utils/apiConfig';
 
 /**
  * AURA Customer Email Verification Page
@@ -33,7 +34,7 @@ export default function VerifyEmailPage({ token, onNavigate }) {
 
     const verifyToken = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/auth/verify-email', {
+        const response = await fetch(`${API_BASE}/api/auth/verify-email`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -106,7 +107,7 @@ export default function VerifyEmailPage({ token, onNavigate }) {
     setIsResending(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/resend-verification', {
+      const response = await fetch(`${API_BASE}/api/auth/resend-verification`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './AccountPage.css';
 import { normalizeProductImageUrl, handleImageError } from '../utils/imageUtils';
 import ReturnRequestModal from './ReturnRequestModal';
+import { API_BASE } from '../utils/apiConfig';
 
 export default function TrackOrderPage({ currentUser = null, onNavigate }) {
   const [mode, setMode] = useState(currentUser ? 'account' : 'guest');
@@ -31,7 +32,7 @@ export default function TrackOrderPage({ currentUser = null, onNavigate }) {
     setLoadingMyOrders(true);
     setMyOrdersError('');
     try {
-      const response = await fetch('http://localhost:5000/api/orders/my-orders', {
+      const response = await fetch(`${API_BASE}/api/orders/my-orders`, {
         method: 'GET',
         credentials: 'include',
       });
@@ -59,7 +60,7 @@ export default function TrackOrderPage({ currentUser = null, onNavigate }) {
     setOrder(null);
 
     try {
-      const response = await fetch('http://localhost:5000/api/orders/track', {
+      const response = await fetch(`${API_BASE}/api/orders/track`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ orderId: orderId.trim(), email: email.trim() }),
