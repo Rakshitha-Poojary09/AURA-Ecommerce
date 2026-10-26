@@ -43,7 +43,7 @@ const allowedOrigins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "https://aura-admin27.netlify.app",
-    "https://aura-ecom27.netlify.app"
+    "https://aura-ecom27.netlify.app",
     process.env.CLIENT_URL,
     process.env.ADMIN_CLIENT_URL
 ].filter(Boolean);
