@@ -42,6 +42,8 @@ const allowedOrigins = [
     "http://127.0.0.1:5174",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://aura-admin27.netlify.app",
+    "https://aura-ecom27.netlify.app"
     process.env.CLIENT_URL,
     process.env.ADMIN_CLIENT_URL
 ].filter(Boolean);
@@ -660,7 +662,7 @@ app.post("/api/orders", async (req, res) => {
                 for (const [col, neededQty] of Object.entries(entry.colorDemands)) {
                     const variant = product.colorVariants.find(
                         (v) => (v.colorName && v.colorName.toLowerCase() === col.toLowerCase()) ||
-                               (v.colorCode && v.colorCode.toLowerCase() === col.toLowerCase())
+                            (v.colorCode && v.colorCode.toLowerCase() === col.toLowerCase())
                     );
                     if (variant) {
                         const variantStock = typeof variant.stock === "number" ? variant.stock : 0;
@@ -792,7 +794,7 @@ app.post("/api/orders", async (req, res) => {
                 for (const [col, neededQty] of Object.entries(entry.colorDemands)) {
                     const variant = product.colorVariants.find(
                         (v) => (v.colorName && v.colorName.toLowerCase() === col.toLowerCase()) ||
-                               (v.colorCode && v.colorCode.toLowerCase() === col.toLowerCase())
+                            (v.colorCode && v.colorCode.toLowerCase() === col.toLowerCase())
                     );
                     if (variant) {
                         const updatedProduct = await Product.findOneAndUpdate(
@@ -1190,7 +1192,7 @@ app.put("/api/orders/:id/status", requireAdmin, async (req, res) => {
         }
 
         const prevStatus = orderDoc.status;
-        
+
         if (prevStatus === "Cancelled" && status !== "Cancelled") {
             return res.status(400).json({ message: "Cannot un-cancel an order." });
         }
@@ -1201,7 +1203,7 @@ app.put("/api/orders/:id/status", requireAdmin, async (req, res) => {
             orderDoc.status = status;
             orderDoc.statusHistory.push({ status, timestamp: new Date() });
         }
-        
+
         if (trackingNumber !== undefined) {
             orderDoc.trackingNumber = trackingNumber;
         }
@@ -1219,7 +1221,7 @@ app.put("/api/orders/:id/status", requireAdmin, async (req, res) => {
                     { $inc: { usedCount: -1 } }
                 );
             }
-            
+
             // Restore inventory
             for (const item of updatedOrder.items) {
                 if (item.productId) {
